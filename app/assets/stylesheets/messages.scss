@@ -18,7 +18,9 @@ $textcolor: #434A54;
 
 .user{
   background-color: #253141;
-  width: 300px;
+  width: 260px;
+  padding: 0 20px;
+  height: 126px;
   .user__name {
     font-size: 16px;
     font-style: bold;
@@ -28,13 +30,15 @@ $textcolor: #434A54;
   .fa {
     color: $color;
     font-size: 16px;
+    float: right;
   }
 }
 
 .list{
   background-color: #2f3e51;
-  width: 300px;
+  width: 260px;
   height: 100%;
+  padding: 0 20px;
   &__group-name1 {
     font-size: 15px;
     color: $color;
@@ -48,21 +52,24 @@ $textcolor: #434A54;
 }
 
 .right-box{
-  width: calc(100% - 300px);
+  width: calc(100vw - 380px);
   float: left;
   height: 100%;
 }
 
 .group{
+  padding: 0 40px;
   &__group-name2{
     padding-top: 35px;
     font-size: 20px;
     color: #333333;
+    width: 150px;
   }
   &__members-name{
     margin-top: 15px;
     font-size: 12px;
     color: #333333;
+    width: 200px;
   }
   input{
     float: right;
@@ -72,6 +79,7 @@ $textcolor: #434A54;
 .contents{
   background-color: #AAAAAA;
   border-top: #eeeeee;
+  padding: 0 40px;
   &__members-name{
     font-size: 16px;
     font-style: bold;
@@ -87,13 +95,6 @@ $textcolor: #434A54;
   &__message{
     padding-top: 10px;
   }
-  &__time2{
-    font-size: 12px;
-    color: #999999;
-    padding-top: 46px;
-    padding-left: 10px;
-  }
-
 }
 
 .user-action{
@@ -109,6 +110,9 @@ $textcolor: #434A54;
       color: yellow;
       float: left;
     }
+    input[type="submit"] {
+      background-color: #38A;
+    }
     input {
       width: 50px;
       font-size: 16px;
@@ -118,5 +122,11 @@ $textcolor: #434A54;
       float: left;
     }
   }
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
 }
 
