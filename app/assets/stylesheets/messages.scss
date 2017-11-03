@@ -21,17 +21,19 @@ $textcolor: #434A54;
   background-color: #253141;
   width: 260px;
   padding: 0 20px;
-  height: 110px;
+  height: 82px;
   .user__name {
     font-size: 16px;
     font-style: bold;
     color: $color;
     float: left;
+    margin-top: 20px;
   }
   .fa {
     color: $color;
     font-size: 16px;
     float: right;
+    margin-top: 20px;
   }
 }
 
@@ -50,6 +52,11 @@ $textcolor: #434A54;
     color: $color;
     padding-top: 5px;
   }
+  &__group-name2 {
+    font-size: 15px;
+    color: $color;
+    padding-top: 40px;
+  }
 }
 
 .right-box{
@@ -60,7 +67,7 @@ $textcolor: #434A54;
 
 .group{
   padding: 0 40px;
-  height: 95px;
+  height: 82px;
   &__group-name2{
     padding-top: 35px;
     font-size: 20px;
@@ -69,7 +76,7 @@ $textcolor: #434A54;
     float: left;
   }
   &__members-name{
-    margin-top: 15px;
+    padding-top: 15px;
     font-size: 12px;
     color: #333333;
     width: 200px;
@@ -87,41 +94,46 @@ $textcolor: #434A54;
 .contents{
   background-color: #AAAAAA;
   border-top: #eeeeee;
-  padding: 0 40px;
-  &__members-name{
-    font-size: 16px;
-    font-style: bold;
-    color: $textcolor;
-    padding-top: 46px;
-  }
-  &__time1{
-    font-size: 12px;
-    color: #999999;
-    padding-top: 46px;
-    padding-left: 10px;
-  }
-  &__message{
-    padding-top: 10px;
-  }
+  padding: 46px 0 0 40px;
+  height: 410px;
+  &__content {
+    margin-bottom: 40px;
+      &__members-name {
+        font-size: 16px;
+        font-style: bold;
+        color: $textcolor;
+      }
+      &__time1{
+        font-size: 12px;
+        color: #999999;
+        margin-left: 10px;
+      }
+      &__message{
+        margin-top: 10px;
+      }
+    }
 }
 
 .user-action{
   height: 90px;
-  padding: 120px 40px;
+  padding: 20px 40px;
   width: calc(100vw - 300px);
   &__box{
   background-color: #38A;
   width: calc(100vw - 380px);
     input[type="text"] {
       height: 50px;
-      width: 910px;
+      width: 810px;
       font-size: 16px;
-      color: yellow;
+      color: #434A54;
       float: left;
     }
     input[type="submit"] {
       background-color: #38A;
-      height: 50px;
+      height: 55px;
+      width: 90px;
+      position: relative;
+      right: 50px;
     }
     input {
       width: 50px;
@@ -130,6 +142,12 @@ $textcolor: #434A54;
     }
     &__image {
       float: left;
+      height: 50px;
+      width: 50px;
+      padding: 5px;
+      position: relative;
+      right: 30px;
+      top: 10px;
     }
   }
 }
