@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 $color: #FFFFFF;
@@ -20,7 +21,7 @@ $textcolor: #434A54;
   background-color: #253141;
   width: 260px;
   padding: 0 20px;
-  height: 126px;
+  height: 110px;
   .user__name {
     font-size: 16px;
     font-style: bold;
@@ -52,18 +53,20 @@ $textcolor: #434A54;
 }
 
 .right-box{
-  width: calc(100vw - 380px);
+  width: calc(100vw - 300px);
   float: left;
   height: 100%;
 }
 
 .group{
   padding: 0 40px;
+  height: 95px;
   &__group-name2{
     padding-top: 35px;
     font-size: 20px;
     color: #333333;
     width: 150px;
+    float: left;
   }
   &__members-name{
     margin-top: 15px;
@@ -73,6 +76,11 @@ $textcolor: #434A54;
   }
   input{
     float: right;
+    color: blue;
+    height: 40px;
+    width: 60px;
+    border-color: blue;
+    margin-top: 28px;
   }
 }
 
@@ -99,19 +107,21 @@ $textcolor: #434A54;
 
 .user-action{
   height: 90px;
-  padding: 20px 40px;
+  padding: 120px 40px;
   width: calc(100vw - 300px);
   &__box{
   background-color: #38A;
   width: calc(100vw - 380px);
     input[type="text"] {
-      width: 400px;
+      height: 50px;
+      width: 910px;
       font-size: 16px;
       color: yellow;
       float: left;
     }
     input[type="submit"] {
       background-color: #38A;
+      height: 50px;
     }
     input {
       width: 50px;
