@@ -1,0 +1,68 @@
+%div.nav-header
+  %div.nav-header__header
+    チャットグループが作成されました。
+
+%div.left-box
+  %div.user.clearfix
+    %div.user__name
+      name
+    = link_to root_path do
+      %user__i.fa.fa-cog
+    = link_to root_path do
+      %user__i.fa.fa-pencil-square-o
+  %div.list
+    %div.list__group-name1
+      sample
+    %div.list__group-messages
+      Good bye world.
+    %div.list__group-name2
+      aaaaaaaaaa
+    %div.list__group-messages
+      まだメッセージはありません。
+    %div.list__group-name2
+      sampleグループ
+    %div.list__group-messages
+      まだメッセージはありません。
+
+%div.right-box
+  %div.group.clearfix
+    %div.group__group-name2
+      sampleグループ
+    = link_to root_path do
+      %input{type: "submit", value: "Edit"}
+    %div.group__members-name
+      Members: ryosukemaehira
+  %div.contents
+    %div.contents__content
+      %span.contents__content__members-name
+        ryosukemaehira
+      %span.contents__content__time1
+        2016/10/02 06:27:07
+      %div.contents__content__message
+        なるほど
+    %div.contents__content
+      %span.contents__content__members-name
+        ryosukemaehira
+      %span.contents__content__time1
+        2016/10/02 06:27:14
+      %div.contents__content__message
+        なるほど
+    %div.contents__content
+      %span.contents__content__members-name
+        ryosukemaehira
+      %span.contents__content__time1
+        2016/10/02 06:27:21
+      %div.contents__content__message
+        なるほど
+    %div.contents__content
+      %span.contents__content__members-name
+        ryosukemaehira
+      %span.contents__content__time1
+        2016/10/02 06:27:28
+      %div.contents__content__message
+        なるほど
+  %div.user-action
+    %div.user-action__box
+      %input{type: "text", placeholder: "type a message"}
+      %div.fa.fa-picture-o.user-action__box__image
+      %input{type: "submit", value: "Send"}

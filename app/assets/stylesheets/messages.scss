@@ -1,0 +1,162 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+@import "color";
+
+.nav-header{
+  background-color: $blue;
+  text-align: center;
+}
+
+.left-box{
+  float: left;
+  height: 100%;
+}
+
+.user{
+  background-color: #253141;
+  width: 260px;
+  padding: 0 20px;
+  height: 82px;
+  &__name {
+    font-size: 16px;
+    font-style: bold;
+    color: $white;
+    float: left;
+    margin-top: 20px;
+  }
+  .fa {
+    color: $white;
+    font-size: 16px;
+    float: right;
+    margin-top: 20px;
+  }
+  .fa.fa-pencil-square-o {
+    position: relative;
+    right: 10px;
+  }
+}
+
+.list{
+  background-color: #2f3e51;
+  width: 260px;
+  height: 100%;
+  padding: 0 20px;
+  &__group-name1 {
+    font-size: 15px;
+    color: $white;
+    padding-top: 20px;
+  }
+  &__group-messages {
+    font-size: 11px;
+    color: $white;
+    padding-top: 5px;
+  }
+  &__group-name2 {
+    font-size: 15px;
+    color: $white;
+    padding-top: 40px;
+  }
+}
+
+.right-box{
+  width: calc(100vw - 300px);
+  float: left;
+  height: 100%;
+}
+
+.group{
+  padding: 0 40px;
+  height: 82px;
+  &__group-name2{
+    padding-top: 35px;
+    font-size: 20px;
+    color: $group;
+    width: 150px;
+    float: left;
+  }
+  &__members-name{
+    padding-top: 15px;
+    font-size: 12px;
+    color: $group;
+    width: 200px;
+  }
+  input{
+    float: right;
+    color: blue;
+    height: 40px;
+    width: 60px;
+    border-color: blue;
+    margin-top: 28px;
+  }
+}
+
+.contents{
+  background-color: #AAAAAA;
+  border-top: #eeeeee;
+  padding: 46px 0 0 40px;
+  height: 410px;
+  &__content {
+    margin-bottom: 40px;
+      &__members-name {
+        font-size: 16px;
+        font-style: bold;
+        color: $textcolor;
+      }
+      &__time1{
+        font-size: 12px;
+        color: #999999;
+        margin-left: 10px;
+      }
+      &__message{
+        margin-top: 10px;
+      }
+    }
+}
+
+.user-action{
+  height: 90px;
+  padding: 20px 40px;
+  width: calc(100vw - 300px);
+  &__box{
+  background-color: $blue;
+  width: calc(100vw - 380px);
+    input[type="text"] {
+      height: 50px;
+      width: 810px;
+      font-size: 16px;
+      color: #434A54;
+      float: left;
+    }
+    input[type="submit"] {
+      background-color: $blue;
+      height: 55px;
+      width: 90px;
+      position: relative;
+      right: 35px;
+    }
+    input {
+      width: 50px;
+      font-size: 16px;
+      float: left;
+    }
+    &__image {
+      float: left;
+      height: 50px;
+      width: 50px;
+      padding: 5px;
+      position: relative;
+      right: 30px;
+      top: 10px;
+    }
+  }
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
