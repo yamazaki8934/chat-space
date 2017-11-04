@@ -22,7 +22,7 @@ $textcolor: #434A54;
   width: 260px;
   padding: 0 20px;
   height: 82px;
-  .user__name {
+  &__name {
     font-size: 16px;
     font-style: bold;
     color: $color;
@@ -133,7 +133,7 @@ $textcolor: #434A54;
       height: 55px;
       width: 90px;
       position: relative;
-      right: 50px;
+      right: 35px;
     }
     input {
       width: 50px;
@@ -157,4 +157,3 @@ $textcolor: #434A54;
   clear: both;
   display: block;
 }
-
