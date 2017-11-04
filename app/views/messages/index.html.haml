@@ -6,8 +6,10 @@
   %div.user.clearfix
     %div.user__name
       name
-    %user__i.fa.fa-cog
-    %user__i.fa.fa-pencil-square-o
+    = link_to root_path do
+      %user__i.fa.fa-cog
+    = link_to root_path do
+      %user__i.fa.fa-pencil-square-o
   %div.list
     %div.list__group-name1
       sample
@@ -26,7 +28,8 @@
   %div.group.clearfix
     %div.group__group-name2
       sampleグループ
-    %input{type: "submit", value: "Edit"}
+    = link_to root_path do
+      %input{type: "submit", value: "Edit"}
     %div.group__members-name
       Members: ryosukemaehira
   %div.contents

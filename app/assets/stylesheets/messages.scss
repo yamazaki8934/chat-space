@@ -4,11 +4,10 @@ html, body {
   overflow: hidden;
 }
 
-$color: #FFFFFF;
-$textcolor: #434A54;
+@import "color";
 
 .nav-header{
-  background-color: #38A;
+  background-color: $blue;
   text-align: center;
 }
 
@@ -25,15 +24,19 @@ $textcolor: #434A54;
   &__name {
     font-size: 16px;
     font-style: bold;
-    color: $color;
+    color: $white;
     float: left;
     margin-top: 20px;
   }
   .fa {
-    color: $color;
+    color: $white;
     font-size: 16px;
     float: right;
     margin-top: 20px;
+  }
+  .fa.fa-pencil-square-o {
+    position: relative;
+    right: 10px;
   }
 }
 
@@ -44,17 +47,17 @@ $textcolor: #434A54;
   padding: 0 20px;
   &__group-name1 {
     font-size: 15px;
-    color: $color;
+    color: $white;
     padding-top: 20px;
   }
   &__group-messages {
     font-size: 11px;
-    color: $color;
+    color: $white;
     padding-top: 5px;
   }
   &__group-name2 {
     font-size: 15px;
-    color: $color;
+    color: $white;
     padding-top: 40px;
   }
 }
@@ -71,14 +74,14 @@ $textcolor: #434A54;
   &__group-name2{
     padding-top: 35px;
     font-size: 20px;
-    color: #333333;
+    color: $group;
     width: 150px;
     float: left;
   }
   &__members-name{
     padding-top: 15px;
     font-size: 12px;
-    color: #333333;
+    color: $group;
     width: 200px;
   }
   input{
@@ -119,7 +122,7 @@ $textcolor: #434A54;
   padding: 20px 40px;
   width: calc(100vw - 300px);
   &__box{
-  background-color: #38A;
+  background-color: $blue;
   width: calc(100vw - 380px);
     input[type="text"] {
       height: 50px;
@@ -129,7 +132,7 @@ $textcolor: #434A54;
       float: left;
     }
     input[type="submit"] {
-      background-color: #38A;
+      background-color: $blue;
       height: 55px;
       width: 90px;
       position: relative;
