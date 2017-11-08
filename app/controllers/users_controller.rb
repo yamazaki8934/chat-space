@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
-  def edit
+  before_action :user_info
+
+  def user_info
     @user = User.find(params[:id])
   end
 
+  def edit
+  end
+
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to root_path
     else
