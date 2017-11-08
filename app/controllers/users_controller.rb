@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
   before_action :user_info
 
-  def user_info
-    @user = User.find(params[:id])
-  end
-
   def edit
   end
 
@@ -22,5 +18,9 @@ class UsersController < ApplicationController
   private
    def user_params
     params.require(:user).permit(:name, :email)
+   end
+
+   def user_info
+    @user = User.find(params[:id])
    end
 end
