@@ -1,3 +1,8 @@
+%div.notification
+  %div.alert
+    - flash.each do |notice, value|
+      = content_tag(:div, value, class: "flash flash__#{notice}")
+
 #account-page.account-page
   .account-page__inner.clearfix
     .account-page__inner--left.account-page__header

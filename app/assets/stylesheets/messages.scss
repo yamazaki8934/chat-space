@@ -6,9 +6,16 @@ html, body {
 
 @import "color";
 
-.nav-header{
-  background-color: $blue;
-  text-align: center;
+.notice{
+  color: #fff;
+    background-color: #00A070;
+    text-align: center;
+}
+
+.alert{
+  background-color: #F35500;
+    color: #fff;
+    text-align: center;
 }
 
 .left-box{

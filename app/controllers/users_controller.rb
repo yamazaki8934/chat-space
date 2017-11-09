@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :user_info
+  before_action :user_info, only: [:edit, :update, :show]
 
   def edit
   end

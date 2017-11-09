@@ -1,6 +1,7 @@
-%div.nav-header
-  %div.nav-header__header
-    チャットグループが作成されました。
+%div.notification
+  %div.notice
+    - flash.each do |notice, value|
+      = content_tag(:div, value, class: "flash flash__#{notice}")
 
 %div.left-box
   %div.user.clearfix
