@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       redirect_to root_path, notice: 'アカウントが更新されました'
     else
       flash.now[:notice] = '更新に失敗しました'
-      render action: :edit
+      render :edit
     end
   end
 
