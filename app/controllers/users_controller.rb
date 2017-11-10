@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to root_path, notice: 'アカウントが更新されました'
     else
-      redirect_to edit_user_path(params[:id]), notice: '更新に失敗しました'
+      flash.now[:notice] = '更新に失敗しました'
+      render action: :edit
     end
   end
 
