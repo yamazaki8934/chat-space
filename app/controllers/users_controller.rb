@@ -1,18 +1,15 @@
 class UsersController < ApplicationController
-  before_action :user_info, only: [:edit, :update, :show]
+  before_action :user_info, only: [:edit, :update]
 
   def edit
   end
 
   def update
     if @user.update(user_params)
-      redirect_to root_path
+      redirect_to root_path, notice: 'アカウントが更新されました'
     else
-      edit_user_path(current_user.id)
+      redirect_to edit_user_path(params[:id]), notice: '更新に失敗しました'
     end
-  end
-
-  def show
   end
 
   private

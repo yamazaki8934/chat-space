@@ -1,7 +1,4 @@
-%div.notification
-  %div.notice
-    - flash.each do |notice, value|
-      = content_tag(:div, value, class: "flash flash__#{notice}")
+= render partial: "message"
 
 %div.left-box
   %div.user.clearfix
