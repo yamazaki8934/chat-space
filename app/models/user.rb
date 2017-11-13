@@ -1,6 +1,5 @@
 class User < ApplicationRecord
   has_many :groups, through: :members
-  has_many :messages
   has_many :members
   validates :email, :name, presence: true
   devise :database_authenticatable, :registerable,
