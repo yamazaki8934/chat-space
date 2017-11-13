@@ -1,6 +1,9 @@
 class GroupsController < ApplicationController
   before_action :group_info, only: [:edit]
 
+  def index
+  end
+
   def edit
   end
 
@@ -16,8 +19,12 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.create(name: group_params[:name])
-    redirect_to root_path, notice: 'グループを作成しました'
+    @group = Group.new(name: group_params[:name])
+    if @group.save
+      redirect_to root_path, notice: 'グループを作成しました'
+    else
+      render "new"
+    end
   end
 
   private
