@@ -1,0 +1,32 @@
+.chat-group-form
+  %h1 チャットグループ編集
+  = form_for @group do |f|
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = f.label :グループ名, class: "chat-group-form__label", for: "chat_group_name"
+      .chat-group-form__field--right
+        = f.text_field :name, placeholder: "グループ名を入力してください", id: "chat_group_name", class: "chat-group-form__input"
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        %label.chat-group-form__label{for: "chat_group_チャットメンバー"} チャットメンバー
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+      .chat-group-form__field--right
+        = f.collection_check_boxes(:user_ids, User.all, :id, :name) do |b|
+          = b.label { b.check_box + b.text }
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+      .chat-group-form__field--right
+        = f.submit "Save", data: {disable_with: "Save"}, class: "chat-group-form__action-btn"
+      / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
+      /
+        <div class='chat-group-form__field--left'>
+        <label class="chat-group-form__label" for="chat_group_チャットメンバーを追加">チャットメンバーを追加</label>
+        </div>
+        <div class='chat-group-form__field--right'>
+        <div class='chat-group-form__search clearfix'>
+        <input class='chat-group-form__input' id='user-search-field' placeholder='追加したいユーザー名を入力してください' type='text'>
+        </div>
+        <div id='user-search-result'></div>
+        </div>
+        / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください

@@ -1,4 +1,4 @@
-= render partial: "message"
+= render partial: "messages/message"
 
 %div.left-box
   %div.user.clearfix
@@ -25,11 +25,11 @@
 %div.right-box
   %div.group.clearfix
     %div.group__group-name2
-      = @group.name
+      /= @group.name
     = link_to root_path do
       %input{type: "submit", value: "Edit"}
     %div.group__members-name
-      = @user
+      /= @user
   %div.contents
     %div.contents__content
       %span.contents__content__members-name
