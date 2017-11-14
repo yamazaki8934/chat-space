@@ -1,15 +1,14 @@
 = render partial: "messages/message"
 
-.chat-group-form
-  %h1 新規チャットグループ
-  = form_for @group do |f|
-    .chat-group-form__errors
-      - if @group.errors.any?
-        #error_explanation
-          %h2
-            1件のエラーが発生しました。
-            %ul
-              %li グループ名を入力してください
+= form_for @group do |f|
+  .chat-group-form
+    %h1 新規チャットグループ
+    - if @group.errors.any?
+      .chat-group-form__errors
+        %h2
+          1件のエラーが発生しました。
+        %ul
+          %li グループ名を入力してください
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         = f.label :グループ名, class: "chat-group-form__label", for: "chat_group_name"
