@@ -52,10 +52,11 @@ html, body {
   width: 260px;
   height: 100%;
   padding: 0 20px;
-  &__group-name1 {
+  &__groups-list {
     font-size: 15px;
     color: $white;
     padding-top: 20px;
+    display: block;
   }
   &__group-messages {
     font-size: 11px;
