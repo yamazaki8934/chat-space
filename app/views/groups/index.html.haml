@@ -8,20 +8,12 @@
       %user__i.fa.fa-cog
     = link_to new_group_path do
       %user__i.fa.fa-pencil-square-o
-  %div.list
-    %div.list__group-name1
-      sample
-    %div.list__group-messages
-      Good bye world.
-    %div.list__group-name2
-      aaaaaaaaaa
-    %div.list__group-messages
-      まだメッセージはありません。
-    %div.list__group-name2
-      sampleグループ
-    %div.list__group-messages
-      まだメッセージはありません。
-
+  .list
+    - current_user.groups.each do |group|
+      %div.list__groups-list
+        = group.name
+      %div.list__group-messages
+        まだメッセージはありません
 %div.right-box
   %div.group.clearfix
     %div.group__group-name2
