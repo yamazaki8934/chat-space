@@ -1,8 +1,8 @@
 = render partial: "messages/message"
 
-%div.left-box
-  %div.user.clearfix
-    %div.user__name
+.left-box
+  .user.clearfix
+    .user__name
       = current_user.name
     = link_to edit_user_path(current_user.id) do
       %user__i.fa.fa-cog
@@ -10,25 +10,25 @@
       %user__i.fa.fa-pencil-square-o
   .list
     - current_user.groups.each do |group|
-      %div.list__groups-list
+      .list__groups-list
         = group.name
-      %div.list__group-messages
+      .list__group-messages
         まだメッセージはありません
-%div.right-box
-  %div.group.clearfix
-    %div.group__group-name2
+.right-box
+  .group.clearfix
+    .group__group-name2
       /= @group.name
     = link_to root_path do
       %input{type: "submit", value: "Edit"}
-    %div.group__members-name
+    .group__members-name
       /= @user
-  %div.contents
-    %div.contents__content
+  .contents
+    .contents__content
       %span.contents__content__members-name
       %span.contents__content__time1
       %div.contents__content__message
-  %div.user-action
-    %div.user-action__box
+  .user-action
+    .user-action__box
       %input{type: "text", placeholder: "type a message"}
-      %div.fa.fa-picture-o.user-action__box__image
+      .fa.fa-picture-o.user-action__box__image
       %input{type: "submit", value: "Send"}
