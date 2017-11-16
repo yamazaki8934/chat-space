@@ -15,22 +15,3 @@
           = group.name
         .list__group-messages
           まだメッセージはありません
-.right-box
-  .group.clearfix
-    .group__group-name2
-      /= current_user.group.name
-    = link_to root_path do
-      %input{type: "submit", value: "Edit"}
-    .group__members-name
-      /= @user
-  .contents
-    .contents__content
-      %span.contents__content__members-name
-      %span.contents__content__time1
-      %div.contents__content__message
-  .user-action
-  = form_for @message do |f|
-    .user-action__box
-      = f.text_field :body, placeholder: "type a message", id: "chat_group_name", class: "chat-group-form__input"
-      .fa.fa-picture-o.user-action__box__image
-      = f.submit "Send"

@@ -1,42 +1,38 @@
 = render partial: "message"
 
-%div.left-box
-  %div.user.clearfix
-    %div.user__name
+.left-box
+  .user.clearfix
+    .user__name
       = current_user.name
     = link_to edit_user_path(current_user.id) do
       %user__i.fa.fa-cog
     = link_to new_group_path do
       %user__i.fa.fa-pencil-square-o
-  %div.list
-    %div.list__group-name1
-      sample
-    %div.list__group-messages
-      Good bye world.
-    %div.list__group-name2
-      aaaaaaaaaa
-    %div.list__group-messages
-      まだメッセージはありません。
-    %div.list__group-name2
-      sampleグループ
-    %div.list__group-messages
-      まだメッセージはありません。
+  .list
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        .list__groups-list
+          = group.name
+        .list__group-messages
+          まだメッセージはありません
 
-%div.right-box
-  %div.group.clearfix
-    %div.group__group-name2
+.right-box
+  .group.clearfix
+    .group__group-name2
       = @group.name
     = link_to root_path do
       %input{type: "submit", value: "Edit"}
-    %div.group__members-name
-      = @user
-  %div.contents
-    %div.contents__content
+    .group__members-name
+      Member :
+      = @group.users.name
+  .contents
+    .contents__content
       %span.contents__content__members-name
       %span.contents__content__time1
-      %div.contents__content__message
-  %div.user-action
-    %div.user-action__box
-      %input{type: "text", placeholder: "type a message"}
-      %div.fa.fa-picture-o.user-action__box__image
-      %input{type: "submit", value: "Send"}
+      .contents__content__message
+  .user-action
+  = form_for [@group, @message] do |f|
+    .user-action__box
+      = f.text_field :body, placeholder: "type a message", id: "chat_group_name", class: "chat-group-form__input"
+      .fa.fa-picture-o.user-action__box__image
+      = f.submit "Send"
