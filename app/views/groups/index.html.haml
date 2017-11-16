@@ -10,14 +10,15 @@
       %user__i.fa.fa-pencil-square-o
   .list
     - current_user.groups.each do |group|
-      .list__groups-list
-        = group.name
-      .list__group-messages
-        まだメッセージはありません
+      = link_to group_messages_path(group) do
+        .list__groups-list
+          = group.name
+        .list__group-messages
+          まだメッセージはありません
 .right-box
   .group.clearfix
     .group__group-name2
-      /= @group.name
+      /= current_user.group.name
     = link_to root_path do
       %input{type: "submit", value: "Edit"}
     .group__members-name
@@ -28,7 +29,8 @@
       %span.contents__content__time1
       %div.contents__content__message
   .user-action
+  = form_for @message do |f|
     .user-action__box
-      %input{type: "text", placeholder: "type a message"}
+      = f.text_field :body, placeholder: "type a message", id: "chat_group_name", class: "chat-group-form__input"
       .fa.fa-picture-o.user-action__box__image
-      %input{type: "submit", value: "Send"}
+      = f.submit "Send"
