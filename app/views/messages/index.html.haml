@@ -34,5 +34,9 @@
   = form_for [@group, @message] do |f|
     .user-action__box
       = f.text_field :body, placeholder: "type a message", id: "chat_group_name", class: "chat-group-form__input"
-      .fa.fa-picture-o.user-action__box__image
+      .chat-file
+        = f.file_field :image, class: "chat-file", style: "display:none;", id: "message_image"
+      .image
+        = f.label :image, class: "image" do
+          .fa.fa-picture-o.user-action__box__image
       = f.submit "Send"
