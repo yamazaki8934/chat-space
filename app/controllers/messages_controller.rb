@@ -16,7 +16,8 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to group_messages_path(@group)
     else
-      render :index, notice: 'メッセージを入力してください'
+      flash.now[:notice] = "メッセージを入力してください。"
+      render :index
     end
   end
 
