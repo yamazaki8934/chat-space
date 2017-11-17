@@ -68,6 +68,11 @@ html, body {
     color: $white;
     padding-top: 40px;
   }
+  h3,p {
+    color: $white;
+    margin-bottom: 30px;
+    font-size: 11px;
+  }
 }
 
 .right-box{
@@ -110,10 +115,9 @@ html, body {
   height: calc(100vh - 218px);
   overflow: scroll;
   &__content {
-    margin-bottom: 40px;
       &__members-name {
         font-size: 16px;
-        font-style: bold;
+        font-weight: bold;
         color: $textcolor;
       }
       &__time1{
@@ -122,7 +126,7 @@ html, body {
         margin-left: 10px;
       }
       &__message{
-        margin-top: 10px;
+        margin-bottom: 40px;
       }
     }
 }
@@ -151,7 +155,7 @@ html, body {
       float: left;
     }
     input[type="submit"] {
-      background-color: $blue;
+      background-color: #0099FF;
       height: 55px;
       width: 100px;
       // position: relative;

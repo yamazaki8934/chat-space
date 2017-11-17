@@ -1,4 +1,24 @@
-%div.notification
-  %div.notice
+.notification
+  .notice
     - flash.each do |notice, value|
       = content_tag(:div, value, class: "flash flash__#{notice}")
+.left-box
+  .user.clearfix
+    .user__name
+      = current_user.name
+    = link_to edit_user_path(current_user.id) do
+      %user__i.fa.fa-cog
+    = link_to new_group_path do
+      %user__i.fa.fa-pencil-square-o
+  .list
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        .list__groups-list
+          = group.name
+        .list__group-messages
+        - if group.messages.present?
+          %h3
+            = group.messages.last.body
+        - else
+          %p
+            メッセージはありません
