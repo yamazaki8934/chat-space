@@ -15,28 +15,34 @@
           = group.name
         .list__group-messages
           まだメッセージはありません
+= form_for [@group, @message] do |f|
+  .right-box
+    .group.clearfix
+      .group__group-name2
+        = @group.name
+      = link_to root_path do
+        %input{type: "submit", value: "Edit"}
+      .group__members-name
+        Member :
+    .contents
+      .contents__content
+      - @group.messages.each do |message|
+        %span.contents__content__members-name
+          = message.user.name
+        %span.contents__content__time1
+          = message.updated_at
+        .contents__content__message
+          = message.body
+          .contents__content__message__image
+          - if message.image.present?
+            = image_tag(message.image)
+    .user-action__footer.clearfix
 
-.right-box
-  .group.clearfix
-    .group__group-name2
-      = @group.name
-    = link_to root_path do
-      %input{type: "submit", value: "Edit"}
-    .group__members-name
-      Member :
-      = @group.users.name
-  .contents
-    .contents__content
-      %span.contents__content__members-name
-      %span.contents__content__time1
-      .contents__content__message
-  .user-action
-  = form_for [@group, @message] do |f|
-    .user-action__box
-      = f.text_field :body, placeholder: "type a message", id: "chat_group_name", class: "chat-group-form__input"
-      .chat-file
-        = f.file_field :image, class: "chat-file", style: "display:none;", id: "message_image"
-      .image
-        = f.label :image, class: "image" do
-          .fa.fa-picture-o.user-action__box__image
-      = f.submit "Send"
+      .user-action__footer__box
+        = f.text_field :body, placeholder: "type a message", id: "chat_group_name", class: "chat-group-form__input"
+        .chat-file
+          = f.file_field :image, class: "chat-file", style: "display:none;", id: "message_image"
+        .image
+          = f.label :image, class: "image" do
+            .fa.fa-picture-o.user-action__box__image
+        = f.submit "Send"

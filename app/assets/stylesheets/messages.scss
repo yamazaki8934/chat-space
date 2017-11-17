@@ -27,7 +27,7 @@ html, body {
   background-color: #253141;
   width: 260px;
   padding: 0 20px;
-  height: 82px;
+  height: 100px;
   &__name {
     font-size: 16px;
     font-style: bold;
@@ -78,7 +78,7 @@ html, body {
 
 .group{
   padding: 0 40px;
-  height: 82px;
+  height: 100px;
   &__group-name2{
     padding-top: 35px;
     font-size: 20px;
@@ -87,10 +87,11 @@ html, body {
     float: left;
   }
   &__members-name{
-    padding-top: 15px;
     font-size: 12px;
     color: $group;
     width: 200px;
+    position: absolute;
+    top: 80px;
   }
   input{
     float: right;
@@ -103,10 +104,11 @@ html, body {
 }
 
 .contents{
-  background-color: #AAAAAA;
+  background-color: #FAFAFA;
   border-top: #eeeeee;
   padding: 46px 0 0 40px;
-  height: 410px;
+  height: calc(100vh - 218px);
+  overflow: scroll;
   &__content {
     margin-bottom: 40px;
       &__members-name {
@@ -125,16 +127,25 @@ html, body {
     }
 }
 
-.user-action{
+.user-action__footer{
   height: 90px;
-  padding: 20px 40px;
+  // padding: 20px 40px;
+  // position: relative;
+  position: fixed;
+  bottom: 0;
   width: calc(100vw - 300px);
+  background-color: #DDDDDD;
   &__box{
-  background-color: $blue;
-  width: calc(100vw - 380px);
+  // background-color: $blue;
+  position: relative;
+  // width: calc(100vw - 380px);
+  width: 100%;
     input[type="text"] {
+      position: absolute;
+      top: 20px;
+      left: 35px;
       height: 50px;
-      width: 810px;
+      width: 870px;
       font-size: 16px;
       color: #434A54;
       float: left;
@@ -142,23 +153,32 @@ html, body {
     input[type="submit"] {
       background-color: $blue;
       height: 55px;
-      width: 90px;
-      position: relative;
+      width: 100px;
+      // position: relative;
+      right: 35px;
+      position: absolute;
+      top: 20px;
       right: 35px;
     }
     input {
       width: 50px;
       font-size: 16px;
-      float: left;
+      // float: left;
     }
     &__image {
       float: left;
       height: 50px;
       width: 50px;
       padding: 5px;
-      position: relative;
-      right: 30px;
-      top: 10px;
+      background-color: #fff;
+      //position: absolute;
+      //right: 900px;
+      //top: 10px;
+    }
+    .fa {
+      position: absolute;
+      right: 160px;
+      top: 37px;
     }
   }
 }
