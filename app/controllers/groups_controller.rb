@@ -2,6 +2,8 @@ class GroupsController < ApplicationController
   before_action :group_info, only: [:edit]
 
   def index
+    # @group = Group.find(params[:id])
+    @message = Message.new
   end
 
   def edit
