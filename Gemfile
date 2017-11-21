@@ -78,3 +78,5 @@ gem 'mini_magick'
 group :test do
   gem 'faker'
 end
+
+gem 'rails-controller-testing'
