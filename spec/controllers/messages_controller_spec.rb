@@ -3,7 +3,7 @@ require 'rails_helper'
 describe MessagesController, type: :controller do
   let(:user) {create(:user)} # userをcreateし、let内に格納
   let(:group) {create(:group)}
-  let(:message) {create(:message)}
+  let(:message) {build(:message)}
 
   describe 'GET #index' do
     context 'by login user' do
@@ -47,12 +47,7 @@ describe MessagesController, type: :controller do
 
       context 'successfully saved messages' do
         it "successfully saved messages" do
-          #post :create, group_id: group.id, user_id: user.id, message: attributes_for(:message, body: message.body)
-          expect{ subject.call }.to change(Message, :count).by(2)
-          #expect(assigns(:message)).to have_attributes(user_id: user.id,
-            #group_id: Message.last.group_id,
-            #body: message.body).to change(Message, :count).by(1)
-          #expect(assigns(:message).image).not_to eq nil.to change(Message, :count).by(1)
+          expect{ subject.call }.to change(Message, :count).by(1)
         end
 
         it "is expected to redirect_to group_messages_path" do
@@ -62,13 +57,8 @@ describe MessagesController, type: :controller do
       end
       context 'unsuccessfully saved messages' do
         it "unsuccessfully saved messages" do
-          #post :create, group_id: group.id,message: { user_id: message.user_id,
-            #body: nil,
-            #image: message.image  }
           expect{ post :create, group_id: group.id, user_id: user.id, message: attributes_for(:message,
-            body: nil) }.to change(Message, :count).by(0)  
-
-          #expect(flash.now[:notice]).to include "を入力してください"
+            body: nil) }.to change(Message, :count).by(0)
         end
 
         it "is expected to redirect_to root_path" do
