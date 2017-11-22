@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe MessagesController, type: :controller do
-  let(:user) { create(:user) }
+  let(:user) {create(:user)}
   # userをcreateし、let内に格納
   let(:group) {create(:group)}
   let(:message) {create(:message)}
@@ -47,10 +47,10 @@ describe MessagesController, type: :controller do
       end
       context 'successfully saved messages' do
         it "successfully saved messages" do
-          post :create, group_id: group.id, message: { user_id: message.user_id,
-            body: message.body,
-            image: message.image  }
-
+          post :create, group_id: group.id, user_id: user.id, message: attributes_for(:message, body: message.body)
+          #, message: { user_id: message.user_id,
+            #body: message.body,
+            #image: message.image  }
           expect(assigns(:message)).to have_attributes(user_id: user.id,
             group_id: Message.last.group_id,
             body: message.body)
