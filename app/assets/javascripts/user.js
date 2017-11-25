@@ -1,12 +1,5 @@
 $(function() {
-
-  // function ChatMember(user, id) {
-  //   var member = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
-  //                 <input name='group[user_ids][]' type='hidden' value='ユーザーのid'>
-  //                 <p class='chat-group-user__name'>${user.name}</p>
-  //                 <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
-  //                 </div>`;
-  // };
+  
   function GroupMember(user, id){
     var user_list = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
   <input name='group[user_ids][]' type='hidden' value='${id}'>
