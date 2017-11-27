@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
-  before_action :user_info, only: [:edit, :update]
+  before_action :user_info, only: [:index, :edit, :update]
+
+  def index
+    @users = User.search_users(params[:keyword])
+    # respond_to do |format|
+    #   format.html { redierct_to :root }
+    # end
+  end
 
   def edit
   end
@@ -19,6 +26,6 @@ class UsersController < ApplicationController
    end
 
    def user_info
-    @user = User.find(params[:id])
+    @user = User.find_by(params[:id])
    end
 end
