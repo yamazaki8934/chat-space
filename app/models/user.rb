@@ -5,4 +5,7 @@ class User < ApplicationRecord
   validates :email, :name, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  scope :search_users, lambda { |keyword|
+      where('name LIKE(?)', "%#{keyword}%")
+    }
 end

@@ -1,5 +1,18 @@
 $(function() {
-  
+
+  var user_list = $("#user-search-result");
+
+  $(document).on("click", ".user-search-add", function() {
+      $(this).parent().remove();
+      var add_user = $(this).attr("data-user-name");
+      var add_id = $(this).attr("data-user-id");
+      GroupMember(add_user, add_id);
+  });
+
+  $(document).on("click", ".user-search-remove", function() {
+      $(this).parent().remove();
+  });
+
   function GroupMember(user, id){
     var user_list = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
   <input name='group[user_ids][]' type='hidden' value='${id}'>
@@ -8,8 +21,6 @@ $(function() {
   </div>`;
     $("#chat-group-users").append(user_list);
   };
-
-  var user_list = $("#user-search-result");
 
   function appendUser(user) {
     var html = `<div class="chat-group-user clearfix">
@@ -24,18 +35,6 @@ $(function() {
                 </div>`;
     user_list.append(html);
   }
-
-  $(document).on("click", ".user-search-add", function() {
-      $(this).parent().remove();
-      var add_user = $(this).attr("data-user-name");
-      var add_id = $(this).attr("data-user-id");
-      GroupMember(add_user, add_id);
-  });
-
-  $(document).on("click", ".user-search-remove", function() {
-      $(this).parent().remove();
-  });
-
 
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();

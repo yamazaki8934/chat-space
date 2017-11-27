@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :user_info, only: [:index, :edit, :update]
 
   def index
-    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
+    @users = User.search_users(params[:keyword])
     # respond_to do |format|
     #   format.html { redierct_to :root }
     # end
