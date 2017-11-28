@@ -38,4 +38,28 @@ $(function(){
         alert('メッセージを入力してください。');
       });
   });
+  setInterval(function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+    $.ajax({
+      url: window.location.href,
+      type: "GET",
+      dataType: 'json'
+    })
+    .done(function(json) {
+      var id = $('.contents__content').last().data('message-id');
+      var insertHTML = '';
+      json.messages.forEach(function(message) {
+        if (message.id > id) {
+          insertHTML += buildHTML(message);
+        }
+      });
+      $('.contents').append(insertHTML);
+      $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 'fast');
+    })
+    .fail(function(json) {
+      alert('自動更新に失敗しました');
+    });
+  } else {
+    clearInterval(interval);
+  }} , 5000 );
 });
